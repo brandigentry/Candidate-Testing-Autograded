@@ -46,12 +46,8 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-// if (candidateAnswers === correctAnswers) {
-//   console.log("Correct");
-// } else {
-//   console.log("Incorrect");
-// }
 
+  
 for (let i = 0; i < questions.length; i++){
 if (candidateAnswers[i] === correctAnswers[i]){
   console.log(`Question ${i +1}: Correct! You answered ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]}.`);
