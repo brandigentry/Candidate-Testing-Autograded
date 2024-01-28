@@ -43,27 +43,43 @@ function askQuestion() {
 }
 
 
+
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-  
+let totalQuestions = 5;
+let grade = 0;
+
 for (let i = 0; i < questions.length; i++){
-if (candidateAnswers[i] === correctAnswers[i]){
+if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+  grade += 1;
   console.log(`Question ${i +1}: Correct! You answered ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]}.`);
 } else {
-  console.log(`Quetion ${i +1}: Incorrect. You answered ${candidateAnswers[i]} but the correct answer is ${correctAnswers[i]}.`);
+  grade += 0;
+  console.log(`Question ${i +1}: Incorrect. You answered ${candidateAnswers[i]} but the correct answer is ${correctAnswers[i]}.`);
 }
 }
 
-  
+if (grade === 0){
+  console.log("Total Score: 0%");
+} else if (grade === 1){
+  console.log("Total Score: 20%");
+} else if (grade === 2){
+  console.log("Total Score: 40%");
+} else if (grade === 3){
+  console.log("Total Score: 60%");
+} else if (grade === 4){
+  console.log("Total Score: 80%. Congratulations! You passed!");
+} else if (grade === 5){
+  console.log("Total Score: 100%! Way to go!");
+}
 
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
+grade = ((grade/totalQuestions) *100);  //TODO 3.2 use this variable to calculate the candidates score.
 
   return grade;
 }
+
 
 function runProgram() {
   askForName();
